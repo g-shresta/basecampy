@@ -11,6 +11,8 @@ app.use(cors({
     methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }))
+import router from "./routes/healthcheck.router.js";
+app.use("/api/v1/healthcheck", router)
 app.get('/', (req, res) => {
     res.send("HELLO WORLD")
 })
